@@ -1,3 +1,5 @@
+import os
+
 class Config:
     LANG = ""
     LANG_LIST = ["ar", "de", "en", "es", "fr", "id", "it", "ja", "ko", "pt", "ru", "th", "tr", "uk", "vi", "ch-CN", "zh-TW"]
@@ -10,7 +12,7 @@ class Config:
         ASSET_GITHUB_PATH = "raw.githubusercontent.com/EnkaNetwork/API-docs/master/store/"
         ASSET_GITLAB_PATH = "gitlab.com/Dimbreath/AnimeGameData/-/raw/main/ExcelBinOutput/"
         ASSET_GITLAB_TEXTMAP_PATH = "gitlab.com/Dimbreath/AnimeGameData/-/raw/main/TextMap/"
-        ASSET_FILE_PATH = "enkaNetwork/assets/"
+        ASSET_FILE_PATH = f"{os.path.dirname(__file__)}/assets/"
 
     class GITHUB_ASSET:
         CHARACTER = "characters.json"
