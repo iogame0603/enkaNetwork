@@ -8,5 +8,6 @@ setup(
         "aiofiles==23.2.1",
         "aiohttp==3.8.4",
         "pydantic==2.6.3"
-    ]
+    ],
+    package_data={"enkaNetwork": ["assets/*.json"]}
 )
