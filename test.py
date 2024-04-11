@@ -4,8 +4,12 @@ from enkaNetwork.enkaNetworkClient import EnkaNetworkClient
 client = EnkaNetworkClient()
 
 async def main():
-    await client.update_assets()
-    data = await client.fetch_user(uid=800036636)
-    print(data)
+    # genshin_data = await client.fetch_genshin_user(800036636)
+
+    starrail_data = await client.fetch_starrail_user(800036636)
+    print(starrail_data)
+    # for data in starrail_data.avatarInfoList:
+    #     for relic in data.relicList:
+    #         print(relic)
 
 asyncio.run(main())

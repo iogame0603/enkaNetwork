@@ -4,6 +4,7 @@ from typing import Any
 import json
 from .config import Config
 from .exception import *
+from .types import Game
 
 class Route:
     def __init__(self, method: str, path: str, endpoint: str = "enka"):
@@ -28,31 +29,34 @@ class HttpClient:
         async with aiofiles.open(path, "w", encoding="UTF-8") as file:
             await file.write(json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False))
 
-    async def fetch_user(self, uid: int, info: bool = False):
-            r = Route(method="GET", path=f"/api/uid/{uid}{'?info' if info else ''}")
-            return await self.request(r=r)
+    async def fetch_user(self, uid: int, info: bool, game: Game):
+        r = Route(method="GET", path=f"/api{'/hsr' if game == Game.HONKAI_STARRAIL else ''}/uid/{uid}/{'?info' if info else ''}")
+        return await self.request(r=r)
 
-    async def update_assets(self):
-        # update character (github)
-        r = Route(method="GET", path=Config.PATH.ASSET_GITHUB_PATH + Config.GITHUB_ASSET.CHARACTER, endpoint="asset")
-        character = await self.request(r=r)
-        await self.save_asset(path=Config.PATH.ASSET_FILE_PATH + Config.GITHUB_ASSET.CHARACTER, data=character)
-
-        # update namecards (github)
-        r = Route(method="GET", path=Config.PATH.ASSET_GITHUB_PATH + Config.GITHUB_ASSET.NAME_CARDS, endpoint="asset")
-        namecard = await self.request(r=r)
-        await self.save_asset(path=Config.PATH.ASSET_FILE_PATH + Config.GITHUB_ASSET.NAME_CARDS, data=namecard)
-
-        # update pfps (github)
-        r = Route(method="GET", path=Config.PATH.ASSET_GITHUB_PATH + Config.GITHUB_ASSET.PFPS, endpoint="asset")
-        pfps_data = await self.request(r=r)
-        await self.save_asset(path=Config.PATH.ASSET_FILE_PATH + Config.GITHUB_ASSET.PFPS, data=pfps_data)
-
-        # update loc (github)
-        r = Route(method="GET", path=Config.PATH.ASSET_GITHUB_PATH + Config.GITHUB_ASSET.LOC, endpoint="asset")
-        loc_data = await self.request(r=r)
-        await self.save_asset(path=Config.PATH.ASSET_FILE_PATH + Config.GITHUB_ASSET.LOC, data=loc_data)
+    async def update_genshin_assets(self):
+        assetList = [Config.GITHUB_ASSET.CHARACTER,
+                     Config.GITHUB_ASSET.LOC,
+                     Config.GITHUB_ASSET.PFPS]
+        
+        for asset in assetList:
+            r = Route(method="GET", path=Config.PATH.ASSET_GITHUB_PATH + asset, endpoint="asset")
+            data = await self.request(r=r)
+            await self.save_asset(path=Config.PATH.ASSET_FILE_PATH + asset, data=data)
 
         r = Route(method="GET", path=Config.PATH.ASSET_GITLAB_TEXTMAP_PATH + Config.GITLAB_ASSET.TEXTMAP_KR, endpoint="asset")
         textMapKr = await self.request(r=r)
         await self.save_asset(path=Config.PATH.ASSET_FILE_PATH + Config.GITLAB_ASSET.TEXTMAP_KR, data=textMapKr)
+
+    async def update_starrail_assets(self):
+        assetList = [Config.GITHUB_ASSET.STARRAIL_PFPS,
+                     Config.GITHUB_ASSET.STARRAIL_CHARACTER,
+                     Config.GITHUB_ASSET.STARRAIL_RELIC,
+                     Config.GITHUB_ASSET.STARRAIL_SKILL,
+                     Config.GITHUB_ASSET.STARRAIL_SKILLTREE,
+                     Config.GITHUB_ASSET.STARRAIL_WEPS,
+                     Config.GITHUB_ASSET.STARRAIL_LOC]
+        
+        for asset in assetList:
+            r = Route(method="GET", path=Config.PATH.ASSET_GITHUB_PATH + asset, endpoint="asset")
+            data = await self.request(r=r)
+            await self.save_asset(path=Config.PATH.ASSET_FILE_PATH + asset, data=data)
