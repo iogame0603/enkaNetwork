@@ -7,16 +7,11 @@ class Prop(BaseModel):
     type: str
     value: Union[int, float]
 
-    @field_validator("value")
-    def v(cls, value: Union[int, float], values: ValidationInfo):
-        # import math
-
-        # if "Delta" in values.data["type"]:
-        #     return int(math.floor(value))
-        # return round(value * 100, 1)
-        pass
-    
     def __init__(self, **data):
+        if data["type"].find("Delta") != -1:
+            data["value"] = int(round(data["value"]))
+        else:
+            data["value"] = round(data["value"] * 100, 1)
         data["type"] = HonkaiStarrailUtil.get_localizations(data["type"])
         super().__init__(**data)
 
