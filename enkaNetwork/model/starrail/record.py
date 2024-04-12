@@ -1,13 +1,17 @@
 from pydantic import BaseModel
+from typing import Optional
 
 class ChallengeInfo(BaseModel):
-    scheduleMaxLevel: int
-    scheduleGroupId: int
-    noneScheduleMaxLevel: int
+    scheduleMaxLevel: int = None
+    scheduleGroupId: int = None
+    noneScheduleMaxLevel: int = None
 
 class RecordInfo(BaseModel):
     equipmentCount: int
-    maxRogueChallengeScore: int
+    maxRogueChallengeScore: int = 0
     avatarCount: int
     achievementCount: int
-    challengeInfo: ChallengeInfo
+    challengeInfo: Optional[ChallengeInfo]
+    
+    def __init__(self, **data):
+        super().__init__(**data)

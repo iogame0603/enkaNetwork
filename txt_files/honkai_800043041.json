@@ -1,0 +1,108 @@
+{
+  "detailInfo": {
+    "recordInfo": {
+      "equipmentCount": 47,
+      "avatarCount": 9,
+      "achievementCount": 19,
+      "challengeInfo": {
+
+      }
+    },
+    "nickname": "iogame",
+    "uid": 800043041,
+    "headIcon": 208002,
+    "level": 14,
+    "friendCount": 4,
+    "isDisplayAvatar": true,
+    "avatarDetailList": [
+      {
+        "level": 20,
+        "skillTreeList": [
+          {
+            "pointId": 1001001,
+            "level": 1
+          },
+          {
+            "pointId": 1001002,
+            "level": 1
+          },
+          {
+            "pointId": 1001003,
+            "level": 1
+          },
+          {
+            "pointId": 1001004,
+            "level": 1
+          },
+          {
+            "pointId": 1001007,
+            "level": 1
+          },
+          {
+            "pointId": 1001201,
+            "level": 1
+          }
+        ],
+        "equipment": {
+          "tid": 21002,
+          "level": 17,
+          "rank": 1,
+          "exp": 60,
+          "_flat": {
+            "props": [
+              {
+                "type": "BaseHP",
+                "value": 146.88
+              },
+              {
+                "type": "BaseAttack",
+                "value": 57.12
+              },
+              {
+                "type": "BaseDefence",
+                "value": 71.4
+              }
+            ],
+            "name": 1352234382
+          }
+        },
+        "relicList": [
+          {
+            "tid": 31021,
+            "type": 1,
+            "mainAffixId": 1,
+            "_flat": {
+              "props": [
+                {
+                  "type": "HPDelta",
+                  "value": 45.1584
+                }
+              ],
+              "setName": 178217679,
+              "setID": 102
+            }
+          },
+          {
+            "tid": 31022,
+            "type": 2,
+            "mainAffixId": 1,
+            "_flat": {
+              "props": [
+                {
+                  "type": "AttackDelta",
+                  "value": 22.5792
+                }
+              ],
+              "setName": 178217679,
+              "setID": 102
+            }
+          }
+        ],
+        "avatarId": 1001,
+        "_assist": true
+      }
+    ]
+  },
+  "ttl": 60,
+  "uid": "800043041"
+}

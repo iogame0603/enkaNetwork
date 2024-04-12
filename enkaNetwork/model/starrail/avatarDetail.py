@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import List
 
 from .skillTree import SkillTree
@@ -16,10 +16,8 @@ class AvatarDetail(BaseModel):
 
     skillTreeList: List[SkillTree]
 
-    equipment: Equipment
-    relicList: List[Relic]
-
-    # TODO : add icon
+    equipment: Equipment = None
+    relicList: List[Relic] = []
 
     def __init__(self, **data):
         avatarInfo = HonkaiStarrailUtil.get_avatar_info(data["avatarId"])

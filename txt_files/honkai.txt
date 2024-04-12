@@ -1,0 +1,74 @@
+enka network (스타레일)
+
+- enka api url
+https://enka.network/api/hsr/uid/ + uid
+
+- 에셋 url
+https://github.com/EnkaNetwork/API-docs/tree/master/store/hsr
+
+- 이미지 url
+https://enka.network/ui/hsr/ + path
+ex) https://enka.network/ui/hsr/SpriteOutput/AvatarRoundIcon/Series/200101.png
+ex) https://enka.network/ui/hsr/SpriteOutput/SpriteOutput/AvatarIconTeam/1001B.png
+
+- hsr.json (원신에선 loc.json과 같음)
+
+detailInfo: detailInfo - 상세 정보
+- recordInfo: recordInfo - 레코드 정보
+-- maxRogueChallengeScore: int - 시뮬레이션 우주
+-- achievementCount: int - 업적 개수
+-- challengeInfo: dict - ?
+--- scheduleMaxLevel: int - 혼돈의 기억
+
+nickname: str - 닉네임
+signature: str - 설명
+uid: int - uid
+headIcon: int - 프로필 사진 (honker_avatars.json)
+level: int - 개척 레벨
+worldLevel: int - 균형 레벨
+platform: str - 플랫폼
+isDisplayAvatar: bool - 공개 여부?
+
+
+avatarDetailList: list[avatarDetail] - 아바타 상세 리스트
+- avatarDetail: dict - 아바타 상세
+-- level: int - 레벨
+skillTreeList: list[skillTree] - 스킬 트리 리스트
+- skillTreeL dict - 스킬 트리
+-- pointId: int - 스킬 id (honker_skills.json)
+-- level: int - 레벨
+
+equipment: dict - 광추 (honker_weps.json)
+- tid: int - tid
+- level: int - 레벨
+- rank: int - 랭크
+- exp: int - 경험치
+
+- _flat: dict - flat
+-- props: list - 부옵션 list
+--- type: str
+--- value: int | float
+-- name: int - hash id
+
+relicList: list[relic] - 유물 (honker_relics.json)
+- tid: int - tid
+- type: int - type
+- mainAffixId: int - 메인 옵션 id
+- subAffixList: list - 서브 옵션 리스트
+-- affixId: int - ?
+-- cnt: int - ?
+-- step: int - ?
+
+- _flat: dict - flat
+-- props: list
+--- type: str
+--- value: int | float
+-- setName: int - 세트 이름
+-- setID: int - 세트 id
+
+promotion: int - ?
+avatarId: int - 아바타 id
+
+
+===============
+ttl: int

@@ -148,3 +148,12 @@ class HonkaiStarrailUtil:
             "rarity" : data["Rarity"],
             "type" : data["Type"]
         }
+    
+    @classmethod
+    def get_skilltree_info(cls, id: Union[int, str]):
+        jsonData = get_json_data(Config.GITHUB_ASSET.STARRAIL_SKILL)
+        data = jsonData[str(id)]
+        return {
+            "icon" : cls.get_img_url(data["IconPath"]),
+            "pointType" : data["PointType"]
+        }

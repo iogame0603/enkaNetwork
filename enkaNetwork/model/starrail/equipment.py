@@ -6,7 +6,7 @@ from ...util import HonkaiStarrailUtil
 class Equipment(BaseModel):
     name: str
     level: int
-    promotion: int
+    # promotion: int
     rank: int
     flat: EquipFlat = Field(alias="_flat")
 
