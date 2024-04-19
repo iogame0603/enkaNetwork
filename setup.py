@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="enkaNetwork",
-    version="0.2",
+    version="0.21",
     description="enka network to json library",
     install_requires=[
         "aiofiles==23.2.1",
