@@ -41,5 +41,6 @@ class PlayerInfo(BaseModel):
     def __init__(self, **data):
         data["profilePicture"] = ProfilePicture(**data["profilePicture"])
         data["nameCard"] = NameCard(id=data["nameCardId"])
-        data["showNameCardList"] = [NameCard(id=id) for id in data["showNameCardIdList"]]
+        if "showNameCardIdList" in data:
+            data["showNameCardList"] = [NameCard(id=id) for id in data["showNameCardIdList"]]
         super().__init__(**data)
