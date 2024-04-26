@@ -7,6 +7,7 @@ from .relic import Relic
 from ...util import HonkaiStarrailUtil
 
 class AvatarDetail(BaseModel):
+    avatarId: int
     name: str
     level: int
     icon: str
