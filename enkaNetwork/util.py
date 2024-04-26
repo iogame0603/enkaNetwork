@@ -71,7 +71,7 @@ class Util:
             skills[str(skillId)] = cls.get_img_url(character_data[str(avatarId)]["Skills"][str(skillId)])
         result["skills"] = skills
 
-        if "Costumes" in character_data[str(avatarId)]:
+        if costumeId != None:
             costumes_json = character_data[str(avatarId)]["Costumes"][str(costumeId)]
             result["costume"] = {
                 "costumeId": costumeId,
