@@ -10,7 +10,7 @@ class Config:
 
     class PATH:
         ASSET_GITHUB_PATH = "raw.githubusercontent.com/EnkaNetwork/API-docs/master/store/"
-        ASSET_GITLAB_PATH = "gitlab.com/Dimbreath/AnimeGameData/-/raw/main/ExcelBinOutput/"
+        ASSET_GITLAB_PATH = "gitlab.com/Dimbreath/AnimeGameData/-/raw/master/ExcelBinOutput/"
         ASSET_GITLAB_TEXTMAP_PATH = "gitlab.com/Dimbreath/AnimeGameData/-/raw/master/TextMap/"
         ASSET_FILE_PATH = f"{os.path.dirname(__file__)}/assets/"
 
