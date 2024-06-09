@@ -341,6 +341,15 @@
     "801": {
         "iconPath": "UI_AvatarIcon_XingqiuCostumeBamboo_Circle"
     },
+    "8100": {
+        "iconPath": "UI_AvatarIcon_Clorinde_Circle"
+    },
+    "8200": {
+        "iconPath": "UI_AvatarIcon_Sethos_Circle"
+    },
+    "8300": {
+        "iconPath": "UI_AvatarIcon_Sigewinne_Circle"
+    },
     "900": {
         "iconPath": "UI_AvatarIcon_Ningguang_Circle"
     },

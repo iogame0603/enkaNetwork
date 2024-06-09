@@ -2921,6 +2921,36 @@
         },
         "WeaponType": "WEAPON_SWORD_ONE_HAND"
     },
+    "10000095": {
+        "Consts": [
+            "UI_Talent_S_Sigewinne_01",
+            "UI_Talent_S_Sigewinne_02",
+            "UI_Talent_U_Sigewinne_01",
+            "UI_Talent_S_Sigewinne_03",
+            "UI_Talent_U_Sigewinne_02",
+            "UI_Talent_S_Sigewinne_04"
+        ],
+        "Element": "Water",
+        "NameTextMapHash": 781488962,
+        "ProudMap": {
+            "10951": 9531,
+            "10952": 9532,
+            "10955": 9539
+        },
+        "QualityType": "QUALITY_ORANGE",
+        "SideIconName": "UI_AvatarIcon_Side_Sigewinne",
+        "SkillOrder": [
+            10951,
+            10952,
+            10955
+        ],
+        "Skills": {
+            "10951": "Skill_A_02",
+            "10952": "Skill_S_Sigewinne_01",
+            "10955": "Skill_E_Sigewinne_01"
+        },
+        "WeaponType": "WEAPON_BOW"
+    },
     "10000096": {
         "Consts": [
             "UI_Talent_S_Arlecchino_01",
@@ -2950,5 +2980,65 @@
             "10965": "Skill_E_Arlecchino_01"
         },
         "WeaponType": "WEAPON_POLE"
+    },
+    "10000097": {
+        "Consts": [
+            "UI_Talent_S_Sethos_01",
+            "UI_Talent_S_Sethos_02",
+            "UI_Talent_U_Sethos_01",
+            "UI_Talent_S_Sethos_03",
+            "UI_Talent_U_Sethos_02",
+            "UI_Talent_S_Sethos_04"
+        ],
+        "Element": "Electric",
+        "NameTextMapHash": 1431322346,
+        "ProudMap": {
+            "10971": 9731,
+            "10972": 9732,
+            "10975": 9739
+        },
+        "QualityType": "QUALITY_PURPLE",
+        "SideIconName": "UI_AvatarIcon_Side_Sethos",
+        "SkillOrder": [
+            10971,
+            10972,
+            10975
+        ],
+        "Skills": {
+            "10971": "Skill_A_02",
+            "10972": "Skill_S_Sethos_01",
+            "10975": "Skill_E_Sethos_01"
+        },
+        "WeaponType": "WEAPON_BOW"
+    },
+    "10000098": {
+        "Consts": [
+            "UI_Talent_S_Clorinde_01",
+            "UI_Talent_S_Clorinde_02",
+            "UI_Talent_U_Clorinde_02",
+            "UI_Talent_S_Clorinde_03",
+            "UI_Talent_U_Clorinde_01",
+            "UI_Talent_S_Clorinde_04"
+        ],
+        "Element": "Electric",
+        "NameTextMapHash": 2745369298,
+        "ProudMap": {
+            "10981": 9831,
+            "10982": 9832,
+            "10985": 9839
+        },
+        "QualityType": "QUALITY_ORANGE",
+        "SideIconName": "UI_AvatarIcon_Side_Clorinde",
+        "SkillOrder": [
+            10981,
+            10982,
+            10985
+        ],
+        "Skills": {
+            "10981": "Skill_A_01",
+            "10982": "Skill_S_Clorinde_01",
+            "10985": "Skill_E_Clorinde_01"
+        },
+        "WeaponType": "WEAPON_SWORD_ONE_HAND"
     }
 }
