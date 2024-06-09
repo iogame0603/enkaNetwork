@@ -42,6 +42,7 @@ class AvatarInfoDetail(BaseAvatar):
     xp: int = 0
     ascension: int = 0
     level: int = 0
+    talent: int = 0
     stats: AvatarStat = Field({}, alias="fightPropMap")
     fetterInfo: FetterInfo = Field(None, alias="fetterInfo")
 
@@ -58,6 +59,9 @@ class AvatarInfoDetail(BaseAvatar):
                 data["ascension"] = int(propMap["1002"]["ival"])
             if "4001" in propMap:
                 data["level"] = int(propMap["4001"]["ival"])
+
+        if "talentIdList" in data:
+            data["talent"] = len(data["talentIdList"])
 
         if "equipList" in data:
             reliquaryList: List[Reliquary] = []
